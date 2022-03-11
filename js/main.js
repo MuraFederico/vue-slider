@@ -2,6 +2,7 @@ const app = new Vue( {
     el: '#root',
     data: {
         activeIndex: 0,
+        scroll: '',
         arrSlides: [
             {
                 img: '01.jpg',
@@ -33,24 +34,30 @@ const app = new Vue( {
     methods: {
         previousThumb() {
             if (this.activeIndex == 0) {
-                this.activeIndex = this.arrSlides.lenght - 1;
-                
+                this.activeIndex = this.arrSlides.length - 1;  
             }else {
                 this.activeIndex--;
-                console.log(this.activeIndex)
-                console.log(this.arrSlides.lenght)
             }
         },
         nextThumb() {
-            if (this.activeIndex == this.arrSlides.lenght - 1) {
-                this.activeIndex = 0;
-                
+            if (this.activeIndex == this.arrSlides.length - 1) {
+                this.activeIndex = 0;  
             } else {
                 this.activeIndex++;
-                console.log(this.activeIndex)
-                console.log(this.arrSlides.lenght)
             }
+        },
+        autoScroll() {
+            this.scroll = setInterval(this.nextThumb, 3000);
+            
+        },
+        stopScroll(){
+            clearInterval(this.scroll);
         }
+
+    },
+    created(){
+        this.autoScroll();
+
     }
 
 })
