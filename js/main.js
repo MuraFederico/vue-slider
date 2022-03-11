@@ -34,7 +34,7 @@ const app = new Vue( {
         previousThumb() {
             if (this.activeIndex == 0) {
                 this.activeIndex = this.arrSlides.lenght - 1;
-                console.log(this.activeIndex)
+                
             }else {
                 this.activeIndex--;
                 console.log(this.activeIndex)
@@ -44,7 +44,7 @@ const app = new Vue( {
         nextThumb() {
             if (this.activeIndex == this.arrSlides.lenght - 1) {
                 this.activeIndex = 0;
-                // console.log(this.activeIndex)
+                
             } else {
                 this.activeIndex++;
                 console.log(this.activeIndex)
