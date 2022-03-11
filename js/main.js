@@ -2,7 +2,7 @@ const app = new Vue( {
     el: '#root',
     data: {
         activeIndex: 0,
-        scroll: '',
+        interval: '',
         arrSlides: [
             {
                 img: '01.jpg',
@@ -47,11 +47,11 @@ const app = new Vue( {
             }
         },
         autoScroll() {
-            this.scroll = setInterval(this.nextThumb, 3000);
+            this.interval = setInterval(this.nextThumb, 3000);
             
         },
         stopScroll(){
-            clearInterval(this.scroll);
+            clearInterval(this.interval);
         }
 
     },
