@@ -33,18 +33,22 @@ const app = new Vue( {
     methods: {
         previousThumb() {
             if (this.activeIndex == 0) {
-                this.activeIndex = this.arrSlides.lenght -1;
+                this.activeIndex = this.arrSlides.lenght - 1;
                 console.log(this.activeIndex)
             }else {
                 this.activeIndex--;
+                console.log(this.activeIndex)
+                console.log(this.arrSlides.lenght)
             }
         },
         nextThumb() {
-            if (this.activeIndex == this.arrSlides.lenght -1) {
+            if (this.activeIndex == this.arrSlides.lenght - 1) {
                 this.activeIndex = 0;
-                console.log(this.activeIndex)
+                // console.log(this.activeIndex)
             } else {
                 this.activeIndex++;
+                console.log(this.activeIndex)
+                console.log(this.arrSlides.lenght)
             }
         }
     }
